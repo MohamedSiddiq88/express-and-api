@@ -13,6 +13,11 @@ app.use(express.json())
 //create hallData
 let hallData = [];
 
+
+fs.get("/",(req,res)=>{
+    res.send("welcome")
+})
+
 //use json data
 fs.readFile("./hallData.json","utf-8", (error, data) => {
     if (error) {
