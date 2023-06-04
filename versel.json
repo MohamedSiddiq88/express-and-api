@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "name": "hall-ticket-application",
     "builds": [
         {
             "src": "index.js",
