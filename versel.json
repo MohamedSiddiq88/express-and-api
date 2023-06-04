@@ -1,12 +1,16 @@
 {
-    "version" : 2,
-    "name" : "hall-ticket-application",
-    "builds":[{"src":"./index.js",
-    "use":"@vercel/node"}],
-    "routes":[
+    "version": 2,
+    "name": "hall-ticket-application",
+    "builds": [
         {
-            "src":"/(.*)",
-    "dest":"/index.js"
-    }
-]
+            "src": "index.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "index.js"
+        }
+    ]
 }
