@@ -1,20 +1,22 @@
-//impot fs , express 
-// const fs = require("fs");
-// const express = require("express");
-// const { error } = require("console");
-import express from "express";
-import fs from "fs";
-import {error} from "console";
+// import fs , express 
+const fs = require("fs");
+const express = require("express");
+const { error } = require("console");
+// import express from "express";
+// import fs from "fs";
+// import {error} from "console";
 
 //intialize the express
 const app = express();
 app.use(express.json())
 
+const PORT=process.env.PORT;
+
 //create hallData
 let hallData = [];
 
 
-fs.get("/",(req,res)=>{
+app.get("/",(req,res)=>{
     res.send("welcome")
 })
 
@@ -112,7 +114,7 @@ app.get("/hall-ticket/costomer-count", (req, res) => {
 })
 
 //listen to the server
-app.listen(9000, () => console.log("woriking"));
+app.listen(PORT, () => console.log("woriking"));
 
 
 
