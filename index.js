@@ -31,8 +31,7 @@ fs.readFile("./hallData.json","utf-8", (error, data) => {
         console.log(error);
     } else {
         hallData = JSON.parse(data);
-    }
-})
+    
 
 //create new room
 app.post("/add/hall-ticket", (req, res) => {
@@ -124,4 +123,5 @@ app.get("/hall-ticket/booked-room", (req, res) => {
 app.listen(PORT, () => console.log("woriking"));
 
 
-
+}
+})
