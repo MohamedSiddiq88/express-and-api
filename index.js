@@ -13,85 +13,7 @@ app.use(express.json())
 const PORT=process.env.PORT;
 
 //create hallData
-let hallData = [
-    {
-      "id": "100",
-      "numberOfSeats": 100,
-      "amenities": ["Ac", "chairs", "discolights"],
-      "price": 5000,
-      "ifBooked": true,
-      "customerName": "Sanjay",
-      "date": "05-feb-2022",
-      "startTime": "10-feb-2022 at 12PM",
-      "endTime": "11-feb-2020 at 11am",
-      "RoomId": 201,
-      "RoomName": "Duplex"
-    },
-    {
-      "id": "101",
-      "numberOfSeats": 100,
-      "amenities": ["Ac", "chairs", "discolights"],
-      "price": 5000,
-      "ifBooked": false,
-      "customerName": "",
-      "date": "",
-      "startTime": "",
-      "endTime": "",
-      "RoomId": 202,
-      "RoomName": "Duplex"
-    },
-    {
-      "id": "102",
-      "numberOfSeats": 50,
-      "amenities": ["Ac", "chairs"],
-      "price": 3000,
-      "ifBooked": false,
-      "customerName": "",
-      "date": "",
-      "startTime": "",
-      "endTime": "",
-      "RoomId": 203,
-      "RoomName": "Classic"
-    },
-    {
-      "id": "103",
-      "numberOfSeats": 100,
-      "amenities": ["Ac", "chairs", "discolights"],
-      "price": 5000,
-      "ifBooked": true,
-      "customerName": "Suresh",
-      "date": "03-feb-2022",
-      "startTime": "15-feb-2022 at 12PM",
-      "endTime": "16-feb-2020 at 11am",
-      "RoomId": 204,
-      "RoomName": "Duplex"
-    },
-    {
-      "id": "104",
-      "numberOfSeats": 200,
-      "amenities": ["Ac", "chairs", "discolights", "buffet"],
-      "price": 9000,
-      "ifBooked": true,
-      "customerName": "Vidhya",
-      "date": "06-feb-2022",
-      "startTime": "11-feb-2022 at 12PM",
-      "endTime": "12-feb-2020 at 11am",
-      "RoomId": 205,
-      "RoomName": "Suite"
-    },{
-      "id": "105",
-      "numberOfSeats": 100,
-      "amenities": ["Ac", "chairs", "discolights"],
-      "price": 5000,
-      "ifBooked": true,
-      "customerName": "Suresh",
-      "date": "03-feb-2022",
-      "startTime": "15-feb-2022 at 12PM",
-      "endTime": "16-feb-2020 at 11am",
-      "RoomId": 204,
-      "RoomName": "Duplex"
-    }
-  ];
+let hallData = [];
 
 
 app.get("/",(req,res)=>{
@@ -104,13 +26,13 @@ app.get("/hall-ticket/all-data", (req, res) => {
 
 
 //use json data
-// fs.readFile("./hallData.json","utf-8", (error, data) => {
-//     if (error) {
-//         console.log(error);
-//     } else {
-//         hallData = JSON.parse(data);
-//     }
-// })
+fs.readFile("./hallData.json","utf-8", (error, data) => {
+    if (error) {
+        console.log(error);
+    } else {
+        hallData = JSON.parse(data);
+    }
+})
 
 //create new room
 app.post("/add/hall-ticket", (req, res) => {
